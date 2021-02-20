@@ -78,13 +78,13 @@
                         <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
                             <div class="flex items-center">
                                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Installation</a></div>
+                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://github.com/eltorio/TMAControl" class="underline text-gray-900 dark:text-white">Installation</a></div>
                             </div>
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
 
-                                    Aliquam convallis sollicitudin purus. Praesent aliquam, enim at fermentum mollis, ligula massa adipiscing nisl, ac euismod nibh nisl eu lectus. Fusce vulputate sem at sapien. Vivamus leo.
+                                    Si vous voulez créer votre balise, nous mettons à disposition notre <a href="https://github.com/eltorio/TMAControl" class="underline text-gray-900 dark:text-white">code source sous licence MIT</a>. Côté serveur vous aurez besoin d'un hébergeur un peu flexible pouvant héberger du PHP7, mais rien de bien exceptionnel. Côté <a href="https://github.com/eltorio/TMAControl" class="underline text-gray-900 dark:text-white">client</a> une VHF professionnelle programée, un Raspberry Pi et une connexion Internet suffiront… 
                                 </div>
                             </div>
                         </div>
@@ -97,7 +97,7 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius, ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus sapien eros vitae ligula. Pellentesque rhoncus nunc et augue. Integer id felis. Curabitur aliquet pellentesque diam
+                                    Marcher et Voler, voilà ce qui nous ressemble. Gravir les montagnes pour redescendre par les airs c'est un rêve que nous réalisons. Le matériel d'aujourd'hui rend ce rêve plus accessible. Venez voler avec nous. En solo, en tandem… Pour un petit plouf ou pour un long vol il y aura toujours un de nos membres pour partager un moment.
                                 </div>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit.
+                                    Nous sommes un jeune club, rejoignez-nous et <a href="https://intranet.ffvl.fr/ffvl_licenceonline/pre_rempli/NEW/14172" class="underline text-gray-900 dark:text-white">prenez votre licence avec nous<a>. Vous pouvez aussi nous aider financièrement pour que nous puissions développeer de nouveaux projets et faire avancer la pratique du marche et vol en parapente. 
                                 </div>
                             </div>
                         </div>
@@ -132,7 +132,7 @@
                                 <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                             </svg>
 
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
+                            <a href="mailto:adhesion@highcanfly.club" class="ml-1 underline">
                                 Sponsor
                             </a>
                         </div>
