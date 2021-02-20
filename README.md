@@ -101,7 +101,7 @@ $user =App\Models\User::create(['name' => 'Ronan Le Meillat', 'email'=>'adhesion
 #create the admin user
 $admin_role = App\Models\Role::create(['name' => 'admin']);
 $setter_role = App\Models\Role::create(['name' => 'viewer']);
-$$viewer_role = App\Models\Role::create(['name' => 'setter']);
+$viewer_role = App\Models\Role::create(['name' => 'setter']);
 #Attach him all the roles
 $user->roles()->attach($admin_role);
 $user->roles()->attach($setter_role);
