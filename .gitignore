@@ -3,15 +3,12 @@ node_modules/
 npm-debug.log
 yarn-error.log
 
-# Laravel 4 specific
 bootstrap/compiled.php
 app/storage/
 
-# Laravel 5 & Lumen specific
 public/storage
 public/hot
 
-# Laravel 5 & Lumen specific with changed public path
 public_html/storage
 public_html/hot
 
@@ -21,3 +18,38 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+.DS_Store
+.AppleDouble
+.LSOverride
+
+Icon
+
+
+._*
+
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
