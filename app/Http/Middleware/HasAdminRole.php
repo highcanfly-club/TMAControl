@@ -17,7 +17,7 @@ class HasAdminRole
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->hasSetterRole())
+	 if (Auth::check() && Auth::user()->hasAdminRole())
             return $next($request);
         
         abort(403);
