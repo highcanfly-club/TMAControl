@@ -79,10 +79,12 @@ if the signature is wrong it throws an exception otherwise nothing… Well done 
 * Install Laravel 8 with Jetstream
 ```bash
 composer create-project laravel/laravel TMAControl
+git clone https://github.com/eltorio/TMAControl.git temp
+cp -a temp/.git TMAControl/.git
+rm -rf temp
 cd TMAControl
-composer require laravel/jetstream
-composer require laravel-lang/lang:~8.0
-php artisan jetstream:install livewire --teams
+git reset --hard HEAD
+composer upgrade
 ```
 * Clone the repository and overwrite the default Laravel files
 * Sets the .env
