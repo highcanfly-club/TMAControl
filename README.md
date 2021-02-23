@@ -83,10 +83,13 @@ git clone https://github.com/eltorio/TMAControl.git temp
 cp -a temp/.git TMAControl/.git
 rm -rf temp
 cd TMAControl
-git reset --hard HEAD
 composer upgrade
+php artisan jetstream:install livewire
+git reset --hard HEAD
+npm install && npm run dev
 ```
-* Clone the repository and overwrite the default Laravel files
+* Create or retrieve your certificate
+  * openssl req -x509 -newkey rsa:512 -keyout privkey.pem -nodes -out cert.pem -days 3650
 * Sets the .env
 * in .env set three environment variables: 
   * CRYPTO_WEB_PRIV_KEY=/path/to/SERVER_FQDN_privkey.pem
