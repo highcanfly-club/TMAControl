@@ -18,13 +18,13 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased bg-gray-100 flex flex-col h-screen justify-between">
+    <body class="font-sans antialiased bg-gray-100 dark:bg-gray-900 flex flex-col h-screen justify-between">
         
 
             <!-- Page Heading -->
             @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <header class="bg-gray-100 dark:bg-gray-800  shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 ">
                         {{ $header }}
                     </div>
                 </header>
@@ -32,14 +32,14 @@
 
             <!-- Page Content -->
             <main>
-                <div  class="flex-1 h-full">
+                <div  class="flex-1 h-full bg-gray-100 dark:bg-gray-900 ">
                 {{ $slot }}
                 </div>
             </main>
             @if (!Request::is('login*') && !Request::is('register*'))
-                <footer class='flex w-full mx-auto py-6 px-4 sm:px-6 lg:px-8 bg-white shadow justify-between'>
+                <footer class='flex w-full mx-auto py-6 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-800 shadow justify-between'>
                     <div>
-                        <a href="https://www.highcanfly.club" class="text-sm text-gray-700 ">© High Can Fly 2021</a> 
+                        <a href="https://www.highcanfly.club" class="text-sm text-gray-700 dark:text-white">© High Can Fly 2021</a> 
                     </div>
                     <div>
                         @if (isset($footer))
@@ -48,8 +48,8 @@
                     </div>
                     <div>
                         @if (!Auth::user())
-                            <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">{{__('Login')}}</a>&nbsp;
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">{{__('Register')}}</a>   
+                            <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-white underline">{{__('Login')}}</a>&nbsp;
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-white underline">{{__('Register')}}</a>   
                         @else
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
