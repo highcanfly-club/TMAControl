@@ -64,5 +64,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'has_admin_role' => \App\Http\Middleware\HasAdminRole::class,
         'has_role' => \App\Http\Middleware\HasRole::class,
+        'gdpr_agreement' => \App\Http\Middleware\GDPRAgreement::class,
     ];
 }

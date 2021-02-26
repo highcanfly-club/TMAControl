@@ -90,11 +90,12 @@ npm install && npm run dev
 ```
 * Create or retrieve your certificate
   * openssl req -x509 -newkey rsa:512 -keyout privkey.pem -nodes -out cert.pem -days 3650
-* Sets the .env
+* Sets the .env (see env.sample)
 * in .env set three environment variables: 
   * CRYPTO_WEB_PRIV_KEY=/path/to/SERVER_FQDN_privkey.pem
   * CRYPTO_WEB_CERT=/path/to/SERVER_FQDN_cert.pem
   * CRYPTO_WEB_BASE_URL=https://SERVER_FQDN/checkmessage
+  * GDPR_AGREEMENT=true
 
 * Create the DB and migrates it
 ```bash

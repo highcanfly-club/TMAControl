@@ -124,6 +124,22 @@ return [
     'cipher' => 'AES-256-CBC',
 
     /*
+     * Use this setting to enable the cookie consent dialog.
+     */
+    'gdpr_enabled' => env('COOKIE_CONSENT_ENABLED', true),
+
+    /*
+     * The name of the cookie in which we store if the user
+     * has agreed to accept the conditions.
+     */
+    'gdpr_cookie_name' => 'tmacontrol_cookie_consent',
+
+    /*
+     * Set the cookie duration in days.  Default is 30.
+     */
+    'gdpr_cookie_lifetime' => 30,
+
+    /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
     |--------------------------------------------------------------------------
@@ -176,6 +192,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
+        App\Providers\GDPRAgreementServiceProvider::class,
 
     ],
 

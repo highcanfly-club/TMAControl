@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome')->name('welcome');
+Route::view('/', 'welcome')->middleware(['gdpr_agreement'])->name('welcome');
+Route::view('/gdpr', 'gdpr')->middleware(['gdpr_agreement'])->name('gdpr');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -21,9 +22,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 
 use App\Http\Controllers\TMAStateViewOnlyController;
-Route::get('tmastateview', [TMAStateViewOnlyController::class,'show'])->name('tmastatepublic');
+Route::get('tmastateview', [TMAStateViewOnlyController::class,'show'])->middleware(['gdpr_agreement'])->name('tmastatepublic');
 Route::get('tmastatesecuredmessage', [TMAStateViewOnlyController::class,'securedMessage']);
-Route::get('checkmessage', [TMAStateViewOnlyController::class,'checkSecuredMessage']);
+Route::get('checkmessage', [TMAStateViewOnlyController::class,'checkSecuredMessage'])->middleware(['gdpr_agreement']);
 
 use App\Http\Controllers\TMAStateChangeController;
 //Route::resource('tmastatechange', TMAStateChangeController::class)->middleware('auth');
