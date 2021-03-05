@@ -95,6 +95,7 @@ npm install && npm run dev
   * CRYPTO_WEB_PRIV_KEY=/path/to/SERVER_FQDN_privkey.pem
   * CRYPTO_WEB_CERT=/path/to/SERVER_FQDN_cert.pem
   * CRYPTO_WEB_BASE_URL=https://SERVER_FQDN/checkmessage
+  * CRYPTO_MAX_SKEW_SECONDS=300
   * GDPR_AGREEMENT=true
 
 * Create the DB and migrates it

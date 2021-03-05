@@ -22,7 +22,8 @@ class StateChange extends Model
     private function _json_message()
     {
         return json_encode(array(   "uuid"=>$this->statemessage->uuid,
-        "timestamp"=>$this->updated_at));
+        "updated_at"=>$this->updated_at,
+        "timestamp"=>gmdate(\DateTime::ATOM)));
     }
     public function user()
     {
@@ -44,7 +45,6 @@ class StateChange extends Model
         $hex_signature = "";
         $privkeytext = file_get_contents(env('CRYPTO_WEB_PRIV_KEY', ""));
         $pkeyid = openssl_pkey_get_private($privkeytext);
-        $isotimestamp = date("c");
         if ($pkeyid){
             // compute signature
             openssl_sign($this->_json_message(), $signature, $pkeyid,OPENSSL_ALGO_SHA256);

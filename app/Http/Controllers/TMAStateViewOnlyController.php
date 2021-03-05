@@ -42,7 +42,12 @@ class TMAStateViewOnlyController extends Controller
 
     public function checkSecuredMessage(Request $request)
     {
-        if ($this->isSgnatureValid($request->message,$request->signature))
+        $decoded_message = json_decode($request->message);
+        $message_date = \DateTime::createFromFormat(\DateTime::ATOM, $decoded_message->timestamp);
+        $now = $dateTime = new \DateTime();
+        $message_date_diff = abs($now->getTimestamp() - $message_date->getTimestamp());
+
+        if ( ($this->isSgnatureValid($request->message,$request->signature)) && ($message_date_diff < env("CRYPTO_MAX_SKEW_SECONDS")) )
         {
             return response("OK");
         }
