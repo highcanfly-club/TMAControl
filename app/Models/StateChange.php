@@ -45,7 +45,7 @@ class StateChange extends Model
     public function getSignatureAttribute()
     {
         $hex_signature = "";
-        $privkeytext = file_get_contents(env('CRYPTO_WEB_PRIV_KEY', ""));
+        $privkeytext = file_get_contents(env('CRYPTO_WEB_PRIV_KEY', dirname(__FILE__).'/../../storage/private/privkey.pem'));
         $pkeyid = openssl_pkey_get_private($privkeytext);
         if ($pkeyid){
             // compute signature
