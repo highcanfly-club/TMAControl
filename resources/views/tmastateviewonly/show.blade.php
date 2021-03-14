@@ -15,8 +15,10 @@
           <div class="w-full sm:max-w-3xl mt-6 px-6 py-4 text-gray-900 dark:text-white bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
             <p class="text-2xl capitalize">{{ __('state') }}</p>
             <p class="text-2xl font-bold uppercase">{{ __($state_change->statemessage->message) }}<span class="text-sm"> {{ (($state_change->statemessage->id==2)?__('until').' '.$state_change->created_at->addSeconds($state_change->validity_s)->isoFormat('LLLL').' GMT':'')}}</span></p>
+            @if (!is_null($state_change->created_at))
             <p class="text-2xl capitalize">{{ __('timestamp')}}</p>
-            <p class="text-2xl font-bold">{{ $state_change->updated_at }} GMT</p>
+            <p class="text-2xl font-bold">{{ $state_change->created_at }} GMT</p>
+            @endif
             <div x-data="{ open: false }">
                 <button @click="open = true" class="inline-flex items-center border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white dark:bg-gray-800 hover:text-gray-700 focus:outline-none transition ease-in-out duration-150 capitalize">{{__('message')}}
                     <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
