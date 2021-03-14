@@ -21,7 +21,7 @@
               @foreach($last_states as $state)
               <tr>
                 <td>{{ $state->created_at }}</td>
-                <td>{{ $state->created_at->addSeconds($state->validity_s) }}</td>
+                <td>{{ (isset($state->created_at))?$state->created_at->addSeconds($state->validity_s):'' }}</td>
                 <td>{{ $state->user->name }}</td>
                 <td>{{ __($state->statemessage->message) }}</td>
               </tr>
