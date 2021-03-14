@@ -29,7 +29,7 @@ class TMAStateViewOnlyController extends Controller
     public function isSgnatureValid($message,$signature)
     {
         $binSignature = hex2bin($signature);
-        $certtext = file_get_contents(env('CRYPTO_WEB_CERT', dirname(__FILE__).'/../../../storage/private/cert.pem'));
+        $certtext = file_get_contents(env('CRYPTO_WEB_CERT', dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'storage'.DIRECTORY_SEPARATOR.'private/cert.pem'));
         $public_key_pem = openssl_pkey_get_public($certtext);
         $r = openssl_verify($message, $binSignature, $public_key_pem,OPENSSL_ALGO_SHA256);
 
