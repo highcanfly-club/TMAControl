@@ -28,7 +28,7 @@ class TMAStateChangeController extends Controller
         $data = $request->validate([
             'id' => 'required',
         ]);
-        StateChange::create(["user_id"=>1,"message_id"=>$request->id,"validity_s"=>$request->validity_s]);
+        StateChange::create(["user_id"=>1,"message_id"=>$request->id,"validity_s"=>(isset($request->validity_s)?$request->validity_s:0)]);
         return back()->with('message', "L'état a bien été modifié !");
     }
 
