@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class StateChange extends Model
 {
@@ -17,6 +18,7 @@ class StateChange extends Model
     protected $fillable = [
         'user_id',
         'message_id',
+        'validity_s',
     ];
 
     private function _json_message()
@@ -62,5 +64,20 @@ class StateChange extends Model
     public function getSecuredMessageVerificationAttribute(){
         $message = env('CRYPTO_WEB_BASE_URL','')."?message=".urlencode($this->_json_message())."&signature=".urlencode($this->getSignatureAttribute());
         return $message;
+    }
+
+    public static function isActive(StateChange $_state){
+        $now = new Carbon;
+       return ($_state->created_at->addSeconds($_state->validity_s) >= $now);
+    }
+
+    public static function latest_active(){
+        
+        $latest = self::latest()->first();
+        if (self::isActive($latest) || ( $latest->statemessage->uuid != env('TMA_INACTIVE_UUID',"42917626-92c7-4f16-a5e0-6fab087f42b5"))){       //Only "TMA Inactive expires"
+            return $latest;
+        }else{
+            return self::find(1); //See README.md first state created was "TMA Active"
+        }
     }
 }

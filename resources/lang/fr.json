@@ -189,6 +189,7 @@
   "Public state" : "État public",
   "user" : "utilisateur",
   "date" : "date",
+  "end of validity":"fin de validité",
   "change state":"changer l'état",
   "Change state":"Changer l'état",
   "List changes":"Lister les changements",
@@ -198,11 +199,14 @@
   "message":"message",
   "authority":"autorité",
   "signing the message":"signature du message",
+  "signature":"signature",
   "control":"contrôle",
   "System on maintenance":"Système en maintenance",
   "TMA Lille 3.1 inactive":"TMA Lille 3.1 inactive",
   "TMA Lille 3.1 active":"TMA Lille 3.1 active",
   "This wesite use cookies":"Ce site web utilise des cookies",
   "Allow cookies":"Autoriser les cookies",
-  "Privacy statement":"Déclaration de confidentialité"
+  "Privacy statement":"Déclaration de confidentialité",
+  "Validity (h)":"Validité (h)",
+  "until":"jusqu'au"
 }

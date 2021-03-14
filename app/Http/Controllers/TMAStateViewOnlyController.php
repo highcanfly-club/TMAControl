@@ -16,13 +16,13 @@ class TMAStateViewOnlyController extends Controller
      */
     public function show(Request $request)
     {
-        return view('tmastateviewonly.show', ['state_change'=> StateChange::latest()->first()]);
+        return view('tmastateviewonly.show', ['state_change'=> StateChange::latest_active()]);
     }
 
     public function securedMessage(Request $request)
     {
         return response()
-                ->view('tmastateviewonly.securedmessage', ['state_change'=> StateChange::latest()->first()])
+                ->view('tmastateviewonly.securedmessage', ['state_change'=> StateChange::latest_active()])
                 ->header('Content-Type', 'application/javascript');
     }
 

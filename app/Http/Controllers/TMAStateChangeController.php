@@ -15,7 +15,7 @@ class TMAStateChangeController extends Controller
     public function index()
     {
         $last_states = StateChange::orderBy("created_at","desc")->paginate(20);
-        return view('tmastatechange.index',['last_states'=>$last_states,'state_id'=>StateChange::latest()->first()]);
+        return view('tmastatechange.index',['last_states'=>$last_states,'state_id'=>StateChange::latest_active()]);
     }
 
     /**
@@ -28,7 +28,7 @@ class TMAStateChangeController extends Controller
         $data = $request->validate([
             'id' => 'required',
         ]);
-        StateChange::create(["user_id"=>1,"message_id"=>$request->id]);
+        StateChange::create(["user_id"=>1,"message_id"=>$request->id,"validity_s"=>$request->validity_s]);
         return back()->with('message', "L'état a bien été modifié !");
     }
 
@@ -51,7 +51,7 @@ class TMAStateChangeController extends Controller
      */
     public function show()
     {
-        return view('tmastatechange.show',['state_id'=>StateChange::latest()->first()]);
+        return view('tmastatechange.show',['state_id'=>StateChange::latest_active()]);
     }
 
     /**

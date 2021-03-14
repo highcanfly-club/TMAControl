@@ -76,7 +76,7 @@ crypto.verify(server_cert, signature, data, 'sha256')
 if the signature is wrong it throws an exception otherwise nothing… Well done message is authenticated.
 
 ### Installation
-* Install Laravel 8 with Jetstream
+* Install Laravel 8 with Jetstream (without teams)
 ```bash
 composer create-project laravel/laravel TMAControl
 git clone https://github.com/eltorio/TMAControl.git temp
@@ -92,6 +92,9 @@ npm install && npm run dev
   * openssl req -x509 -newkey rsa:512 -keyout privkey.pem -nodes -out cert.pem -days 3650
 * Sets the .env (see env.sample)
 * in .env set three environment variables: 
+  * TMA_INACTIVE_UUID=42917626-92c7-4f16-a5e0-6fab087f42b5
+  * TMA_ACTIVE_UUID=a4d651bb-bc98-4e57-ae95-dfa94a415b19
+  * TMA_MAINTENANCE_UUID=1bebbccc-e29e-4a8c-8834-3cfeae21432d
   * CRYPTO_WEB_PRIV_KEY=/path/to/SERVER_FQDN_privkey.pem
   * CRYPTO_WEB_CERT=/path/to/SERVER_FQDN_cert.pem
   * CRYPTO_WEB_BASE_URL=https://SERVER_FQDN/checkmessage
@@ -120,7 +123,7 @@ App\Models\StateMessage::create(["message"=>"TMA active"])
 App\Models\StateMessage::create(["message"=>"TMA inactive"])
 App\Models\StateMessage::create(["message"=>"System on maintenance"])
 App\Models\StateMessage::all();
-#Note the uuid for customizing the clients
+#Note the uuid for customizing the clients and fill the .env on the server
 #Set the first state
 App\Models\StateChange::create(["user_id"=>1,"message_id"=>1])
 ```
