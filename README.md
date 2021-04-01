@@ -132,6 +132,9 @@ App\Models\StateChange::create(["user_id"=>1,"message_id"=>1])
 On the server on the tmastateview users can scan a QR code representing a URL with https://SERVER_FQDN/checkmessage?message=XXXX&signature=YYYYYY
 The server checks the signature and answer OK or NOK with its internal cerificate
 
+## RaspberryPi® 3b+ Client
+See https://github.com/eltorio/TMAControl-CClient
+
 ## Python3 tiny Client
 See https://github.com/eltorio/TMAControl-Client
 
