@@ -76,6 +76,54 @@ crypto.verify(server_cert, signature, data, 'sha256')
 if the signature is wrong it throws an exception otherwise nothing… Well done message is authenticated.
 
 ### Installation
+* Sample installation on a development Raspberry Pi 3b+ (with only 1GB ram) Raspbian 10 (Debian Buster)
+```bash
+apt install nginx sqlite3 php-fpm php-bcmath php-gd php-json php-mbstring php-sqlite3 php-tokenizer php-xml composer npm
+systemctl enable php7.3-fpm
+systemctl enable nginx
+```
+
+* edit /etc/dphys-swapfile to add more swap
+```
+CONF_SWAPSIZE=1024
+```
+```bash
+phys-swapfile swapoff
+phys-swapfile setup
+dphys-swapfile swapon
+reboot
+```
+* edit /etc/nginx/sites-enable/default with this template correct
+```bash
+server {
+        listen 80;
+        listen [::]:80;
+
+        listen 443 ssl http2;
+        listen [::]:443 ssl http2;
+
+        ssl_certificate /var/www/TMAControl/storage/private/cert.pem;
+        ssl_certificate_key /var/www/TMAControl/storage/private/privkey.pem;
+
+        root /var/www/TMAControl/public;
+
+        index index.html index.htm index.nginx-debian.html index.php;
+
+        server_name cugnonnettma.lesmuids.windows;
+
+        location / {
+               try_files $uri $uri/ /index.php?$query_string;
+        }
+        location ~ \.php$ {
+                include snippets/fastcgi-php.conf;
+                fastcgi_pass unix:/run/php/php7.3-fpm.sock;
+        }
+}
+```
+```bash
+systemctl start php7.3-fpm
+systemctl start nginx
+```
 * Install Laravel 8 with Jetstream (without teams)
 ```bash
 composer create-project laravel/laravel TMAControl
@@ -87,25 +135,34 @@ composer upgrade
 php artisan jetstream:install livewire
 git reset --hard HEAD
 npm install && npm run dev
+php artisan key:generate
 ```
 * Create or retrieve your certificate
   * openssl req -x509 -newkey rsa:512 -keyout privkey.pem -nodes -out cert.pem -days 3650
 * Sets the .env (see env.sample)
-* in .env set three environment variables: 
+* in .env set these environment variables: 
   * TMA_INACTIVE_UUID=42917626-92c7-4f16-a5e0-6fab087f42b5
   * TMA_ACTIVE_UUID=a4d651bb-bc98-4e57-ae95-dfa94a415b19
   * TMA_MAINTENANCE_UUID=1bebbccc-e29e-4a8c-8834-3cfeae21432d
   * CRYPTO_WEB_PRIV_KEY=/path/to/SERVER_FQDN_privkey.pem
-  * CRYPTO_WEB_CERT=/path/to/SERVER_FQDN_cert.pem
+  * CRYPTO_WEB_CERT=/var/www/TMAControl/storage/private/privkey.pem
   * CRYPTO_WEB_BASE_URL=https://SERVER_FQDN/checkmessage
   * CRYPTO_MAX_SKEW_SECONDS=300
   * GDPR_AGREEMENT=true
+  * DB_CONNECTION=sqlite
+  * DB_DATABASE=/var/www/TMAControl/database/database.sqlite
+  * DB_USERNAME=NotUsefullUserForTMALille31
+  * DB_PASSWORD=AShortPassworfForANotUsefullUserForTMALille31
 
 * Create the DB and migrates it
 ```bash
+sqlite3 /var/www/TMAControl/database/database.sqlite "create table aTable(field1 int); drop table aTable;"
 php artisan migrate
+#you probably need to change the owner of the database and the storage dirs
+chown -R www-data /var/www/TMAControl/database
+chown -R www-data /var/www/TMAControl/storage
 ```
-* Manually populate the DB
+* Manually populate the DB (take care of the user owner of the DB)
 ```php
 $user =App\Models\User::create(['name' => 'Ronan Le Meillat', 'email'=>'adhesion@email.club', 'admin'=>Hash::make('aVeryGoodPassword')]);
 #create the admin user
