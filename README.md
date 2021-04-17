@@ -144,6 +144,8 @@ php artisan key:generate
   * TMA_INACTIVE_UUID=42917626-92c7-4f16-a5e0-6fab087f42b5
   * TMA_ACTIVE_UUID=a4d651bb-bc98-4e57-ae95-dfa94a415b19
   * TMA_MAINTENANCE_UUID=1bebbccc-e29e-4a8c-8834-3cfeae21432d
+  * TMA_LATITUDE=50.569596
+  * TMA_LONGITUDE=3.103107
   * CRYPTO_WEB_PRIV_KEY=/path/to/SERVER_FQDN_privkey.pem
   * CRYPTO_WEB_CERT=/var/www/TMAControl/storage/private/privkey.pem
   * CRYPTO_WEB_BASE_URL=https://SERVER_FQDN/checkmessage
@@ -154,6 +156,7 @@ php artisan key:generate
   * DB_USERNAME=NotUsefullUserForTMALille31
   * DB_PASSWORD=AShortPassworfForANotUsefullUserForTMALille31
 
+Note that latitude/logitude is used for computing the local sunset time. French regulation defines the aeronatical day from 30 minutes before sunrise to 30 minutes after sunset.
 * Create the DB and migrates it
 ```bash
 sqlite3 /var/www/TMAControl/database/database.sqlite "create table aTable(field1 int); drop table aTable;"

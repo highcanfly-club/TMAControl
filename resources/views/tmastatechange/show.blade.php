@@ -40,7 +40,7 @@ $_validity_s_initial_class = ($state_id->statemessage->id == 2) ? $_validity_s_e
               </div>
               <div class="mt-4">
                 {!! Form::label('validity_s', __('Validity (h)'), ['class' => 'block font-medium text-sm text-gray-700']); !!}
-                {!! Form::select('validity_s',['3600'=>'1 h','7200'=>'2 h','10800'=>'3 h','21600'=>'6 h','43200'=>'12 h','86400'=>'24 h'],'21600',['class'=>'block mt-1 w-full '.$_validity_s_initial_class,'disabled' => (($state_id->statemessage->id == 2)?false:true) ]); !!}
+                {!! Form::select('validity_s',[App\Helpers\TMAUtilities::getSunsetDeltaTs()=>__('Sunset in')."&nbsp;".App\Helpers\TMAUtilities::getSunsetDeltaTsAsHM(), App\Helpers\TMAUtilities::getAeronauticalNightDeltaTs()=>__('Aeronautical night in')."&nbsp;".App\Helpers\TMAUtilities::getAeronauticalNightDeltaTsAsHM(),'3600'=>'1 h','7200'=>'2 h','10800'=>'3 h','21600'=>'6 h','43200'=>'12 h','86400'=>'24 h'],App\Helpers\TMAUtilities::getSunsetDeltaTs(),['class'=>'block mt-1 w-full '.$_validity_s_initial_class,'disabled' => (($state_id->statemessage->id == 2)?false:true) ]); !!}
               </div>
               <div class="flex items-center justify-end mt-4">
                   <x-jet-button class="ml-4">
