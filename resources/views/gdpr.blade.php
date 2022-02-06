@@ -10,27 +10,27 @@
         <style>
             @font-face {
                 font-family: 'Rhetoric-BoldItalic';
-                src: url('https://www.highcanfly.club/fonts/Rhetoric-BoldItalic.ttf') format('truetype');
+                src: url('/fonts/Rhetoric-BoldItalic.ttf') format('truetype');
                 }
             @font-face {
                 font-family: 'Rhetoric-Bold';
-                src: url('https://www.highcanfly.club/fonts/Rhetoric-Bold.ttf') format('truetype');
+                src: url('/fonts/Rhetoric-Bold.ttf') format('truetype');
                 }
             @font-face {
             font-family: 'Rhetoric-Light';
-            src: url('https://www.highcanfly.club/fonts/Rhetoric-Light.ttf') format('truetype');
+            src: url('/fonts/Rhetoric-Light.ttf') format('truetype');
             }
             @font-face {
             font-family: 'Rhetoric-LightItalic';
-            src: url('https://www.highcanfly.club/fonts/Rhetoric-LightItalic.ttf') format('truetype');
+            src: url('/fonts/Rhetoric-LightItalic.ttf') format('truetype');
             }
             @font-face {
             font-family: 'Rhetoric-Italic';
-            src: url('https://www.highcanfly.club/fonts/Rhetoric-Italic.ttf') format('truetype');
+            src: url('/fonts/Rhetoric-Italic.ttf') format('truetype');
             }
             @font-face {
             font-family: 'Rhetoric-Book';
-            src: url('https://www.highcanfly.club/fonts/Rhetoric-Book.ttf') format('truetype');
+            src: url('/fonts/Rhetoric-Book.ttf') format('truetype');
             }
             body {
                 font-family: 'Nunito';
@@ -55,7 +55,7 @@
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-3 text-6xl text-gray-600 dark:text-white relative">
-                        <div><a href={{route('welcome')}}><img width="96px" height="96px" src="https://www.highcanfly.club/logo_high_can_fly.svg"/></a></div>
+                        <div><a href={{route('welcome')}}><img width="96px" height="96px" src="/logo_high_can_fly.svg"/></a></div>
                         <div class="col-span-2"><div class="md:absolute mt-2 md:top-1/2 md:-mt-4  dark:text-white" style="color:#721737; font-family: Rhetoric-Bold;">High Can Fly</div></div>
                 </div>
                 

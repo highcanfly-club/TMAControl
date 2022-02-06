@@ -8,27 +8,27 @@
     <style>
         @font-face {
             font-family: 'Rhetoric-BoldItalic';
-            src: url('https://www.highcanfly.club/fonts/Rhetoric-BoldItalic.ttf') format('truetype');
+            src: url('/fonts/Rhetoric-BoldItalic.ttf') format('truetype');
             }
         @font-face {
             font-family: 'Rhetoric-Bold';
-            src: url('https://www.highcanfly.club/fonts/Rhetoric-Bold.ttf') format('truetype');
+            src: url('/fonts/Rhetoric-Bold.ttf') format('truetype');
             }
         @font-face {
         font-family: 'Rhetoric-Light';
-        src: url('https://www.highcanfly.club/fonts/Rhetoric-Light.ttf') format('truetype');
+        src: url('/fonts/Rhetoric-Light.ttf') format('truetype');
         }
         @font-face {
         font-family: 'Rhetoric-LightItalic';
-        src: url('https://www.highcanfly.club/fonts/Rhetoric-LightItalic.ttf') format('truetype');
+        src: url('/fonts/Rhetoric-LightItalic.ttf') format('truetype');
         }
         @font-face {
         font-family: 'Rhetoric-Italic';
-        src: url('https://www.highcanfly.club/fonts/Rhetoric-Italic.ttf') format('truetype');
+        src: url('/fonts/Rhetoric-Italic.ttf') format('truetype');
         }
         @font-face {
         font-family: 'Rhetoric-Book';
-        src: url('https://www.highcanfly.club/fonts/Rhetoric-Book.ttf') format('truetype');
+        src: url('/fonts/Rhetoric-Book.ttf') format('truetype');
         }
         body {
             font-family: 'Nunito';
@@ -47,7 +47,7 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="p-6 sm:px-20 bg-white border-b border-gray-200">
     <div>
-        <img height="48px" width="48px" src="https://www.highcanfly.club/logo_high_can_fly.svg">    </div>
+        <img height="48px" width="48px" src="/logo_high_can_fly.svg">    </div>
 
     <div class="mt-8 text-2xl">
         Bienvenue dans votre application!
