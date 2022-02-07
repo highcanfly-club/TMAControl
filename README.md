@@ -10,7 +10,7 @@ Some files are missing for a complete installation:
 
 # About us
 * Me ( Ronan ) I'm a self-employed developper and a paraglider pilot
-* We ( High Can Fly ) are a french paragliding club who start the development and the exploitation of a VHF reporter for the TMA Lille 3.1 .
+* We ( [High Can Fly](https://www.highcanfly.club) ) are a french paragliding club who start the development and the exploitation of a VHF reporter for the TMA Lille 3.1 .
 
 # License
 Provided "as is" under MIT license.
@@ -74,6 +74,11 @@ pubkey = server_cert.get_pubkey()
 crypto.verify(server_cert, signature, data, 'sha256')
 ```
 if the signature is wrong it throws an exception otherwise nothing… Well done message is authenticated.
+
+## Client
+We published two clients.  
+One very [simple client](https://github.com/eltorio/TMAControl-Client) in python.  
+One [complete client](https://github.com/eltorio/TMAControl-CClient) in C. Main target is Raspberry Pi but it works on any Unix® platform.  
 
 ### Installation
 * Sample installation on a development Raspberry Pi 3b+ (with only 1GB ram) Raspbian 10 (Debian Buster)
